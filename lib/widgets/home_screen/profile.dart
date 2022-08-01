@@ -5,6 +5,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -18,7 +19,10 @@ class Profile extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Column(children: [
                     Padding(
-                      padding: const EdgeInsets.only(right: 28.0, left: 28),
+                      padding: EdgeInsets.only(
+                        right: size.width * 0.05,
+                        left: size.width * 0.05,
+                      ),
                       child: CircleAvatar(
                         radius: 25,
                         backgroundImage: NetworkImage(designer[index].image),
